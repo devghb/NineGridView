@@ -34,6 +34,13 @@ public class ImagePreviewAdapter extends PagerAdapter implements PhotoViewAttach
     private Context context;
     private View currentView;
 
+    imageView.setOnLongClickListener(new View.OnLongClickListener() {
+        @override
+        public boolean onLongClick(View view) {
+            Toast.makeText(context,"长按了",Toast.LENGTH_SHORT).show();
+            return true;
+        }
+    });
     public ImagePreviewAdapter(Context context, @NonNull List<ImageInfo> imageInfo) {
         super();
         this.imageInfo = imageInfo;
